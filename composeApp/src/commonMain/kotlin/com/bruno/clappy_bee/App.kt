@@ -81,7 +81,7 @@ fun App() {
         val platform = remember { getPlatform() }
         var screenWidht by remember { mutableStateOf(0) }
         var screenHeight by remember { mutableStateOf(0) }
-        var game by remember { mutableStateOf(Game()) }
+        var game by remember { mutableStateOf(Game(platform = platform)) }
 
         val spriteState = rememberSpriteState(
             totalFrames = 6,
@@ -138,7 +138,7 @@ fun App() {
                         animation = tween(
                             durationMillis = when(platform){
                                 Platform.Android -> 4000
-                                Platform.iOS -> 4000
+                                Platform.iOS -> 3000
                                 Platform.Web -> 8000
                                 Platform.Desktop -> 7000
 
